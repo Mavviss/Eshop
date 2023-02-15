@@ -1,0 +1,166 @@
+﻿@model IEnumerable<Eshop.Models.Invoice>
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_admin";
+}
+
+<div class="">
+    <div class="card">
+
+        
+            <div class="card-header">
+                <a class="btn btn-success" asp-action="ListProducts" asp-controller="Admin">Về danh sách</a>
+            </div>
+
+
+        <div class="card-header p-4">
+            <div class="float-right">
+                <h3 class="mb-0">Invoice #@ViewBag.Code</h3>
+                Date: @ViewBag.IssuedDate
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-sm-6">
+                    <h5 class="mb-3">From:</h5>
+                    <h3 class="text-dark mb-1">Tribe Store</h3>
+                    <div>65, Huỳnh Thúc Kháng</div>   
+                    <div>Email: Tribeddd@gmail.com</div>
+                    <div>Phone: +84 342781163</div>
+                </div>
+                <div class="col-sm-6 ">
+                    <h5 class="mb-3">To:</h5>
+                    <h3 class="text-dark mb-1">@ViewBag.NameAccount</h3>
+                        <div>@ViewBag.ShippingAddress</div>
+                   
+                    <div>Email: @ViewBag.EmailAccount</div>
+                        <div>Phone: @ViewBag.PhoneAccount</div>
+                </div>
+            </div>
+            <div class="table-responsive-sm">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                           @* <th class="center">ID</th>*@
+                            <th>Tên Sản Phẩm</th>
+                            <th>Description</th>
+                            <th class="right">Price</th>
+                            <th class="center">Qty</th>
+                            <th class="right">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @* @foreach (var item in Model )
+                        {
+                            <tr>
+                                <td class="center">@item.SKU</td>
+                                <td class="left strong">@item.Product.Name</td>
+                                <td class="left">@item.Product.Description</td>
+                                <td class="right">@item.Product.Price</td>
+                                <td class="center">@item.Product.Stock</td>
+                                <td class="right">@(String.Format("{0:0,0 VNĐ}", (Model.Sum(u => u.Product.Price * u.ProductStock))));</td>
+                            </tr>
+                        }*@
+                    </tbody>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-5">
+                </div>
+                <div class="col-lg-4 col-sm-5 ml-auto">
+                    <table class="table table-clear">
+                        <tbody>
+                            <tr>
+                            </tr>
+                            <tr>
+                                <td class="left">
+                                    <strong class="text-dark">Total</strong>
+                                </td>
+                                <td class="right">
+                                    <strong class="text-dark">$20,744,00</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h1>Details</h1>
+
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Account)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Account.Username)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IssuedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IssuedDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShippingAddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShippingAddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ShippingPhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ShippingPhone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Total)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@
